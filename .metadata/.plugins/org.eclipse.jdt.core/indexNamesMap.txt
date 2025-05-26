@@ -1,0 +1,3 @@
+INDEX VERSION 1.134
+file:/C:/Users/user/Downloads/wetransfer_jee_2025-05-24_2041/PatientManagementApp/.metadata/.plugins/org.eclipse.jdt.core/1865797976.index
+meta_index

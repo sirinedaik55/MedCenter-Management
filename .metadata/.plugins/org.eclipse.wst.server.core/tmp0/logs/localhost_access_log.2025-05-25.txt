@@ -1,0 +1,7 @@
+127.0.0.1 - - [25/May/2025:01:14:54 +0100] "GET / HTTP/1.1" 404 681
+0:0:0:0:0:0:0:1 - - [25/May/2025:01:15:10 +0100] "GET /PatientManagementApp/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [25/May/2025:01:15:11 +0100] "GET /PatientManagementApp/views/login.jsp HTTP/1.1" 200 2851
+0:0:0:0:0:0:0:1 - - [25/May/2025:01:15:11 +0100] "GET /PatientManagementApp/css/style.css HTTP/1.1" 200 2691
+0:0:0:0:0:0:0:1 - - [25/May/2025:01:15:18 +0100] "GET /favicon.ico HTTP/1.1" 404 692
+0:0:0:0:0:0:0:1 - - [25/May/2025:01:15:47 +0100] "POST /PatientManagementApp/login HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [25/May/2025:01:15:47 +0100] "GET /PatientManagementApp/admin/dashboard HTTP/1.1" 200 7235
