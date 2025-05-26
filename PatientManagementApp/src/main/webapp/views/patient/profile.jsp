@@ -9,158 +9,205 @@
     <title>Mon Profil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-bg: #f8f9fa;
-            --dark-bg: #343a40;
-        }
+<style>
+    :root {
+        --primary-blue: #4285f4;
+        --light-blue: #e3f2fd;
+        --medical-blue: #87ceeb;
+        --medical-dark: #5f9ea0;
+        --medical-light: #b8e6ff;
+        --dark-text: #333333;
+        --light-text: #666666;
+        --sidebar-bg: #f8f9fa;
+        --main-bg: #ffffff;
+        --border-color: #e0e0e0;
+    }
 
-        body {
-            background-color: var(--light-bg);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    body {
+        background-color: var(--main-bg);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--dark-text);
+    }
 
-        .sidebar {
-            background-color: var(--primary-color);
-            min-height: 100vh;
-            padding: 20px;
-            color: white;
-        }
+    .sidebar {
+        background-color: var(--sidebar-bg);
+        min-height: 100vh;
+        padding: 30px 20px;
+        border-right: 1px solid var(--border-color);
+    }
 
-        .sidebar .nav-link {
-            color: rgba(255, 255, 255, 0.8);
-            padding: 10px 15px;
-            margin: 5px 0;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
+    .sidebar h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--dark-text);
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--border-color);
+    }
 
-        .sidebar .nav-link:hover {
-            background-color: var(--secondary-color);
-            color: white;
-        }
+    .sidebar .nav-link {
+        color: var(--light-text);
+        padding: 12px 15px;
+        margin: 4px 0;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+    }
 
-        .sidebar .nav-link.active {
-            background-color: var(--secondary-color);
-            color: white;
-        }
+    .sidebar .nav-link i {
+        width: 20px;
+        margin-right: 12px;
+    }
 
+    .sidebar .nav-link:hover {
+        background-color: var(--medical-light);
+        color: var(--medical-dark);
+    }
+
+    .sidebar .nav-link.active {
+        background: linear-gradient(135deg, var(--medical-blue) 0%, var(--medical-dark) 100%);
+        color: white;
+    }
+
+    .main-content {
+        padding: 30px 40px;
+        background-color: var(--main-bg);
+    }
+
+    .page-header {
+        margin-bottom: 30px;
+    }
+
+    .page-header h2 {
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--dark-text);
+        margin-bottom: 8px;
+    }
+
+    .page-header p {
+        color: var(--light-text);
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+
+    .profile-card {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        border: 1px solid var(--border-color);
+    }
+
+    .profile-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .profile-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--medical-blue) 0%, var(--medical-dark) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 24px;
+        color: white;
+    }
+
+    .profile-name {
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--dark-text);
+        margin-bottom: 5px;
+    }
+
+    .profile-role {
+        color: var(--light-text);
+        font-size: 16px;
+    }
+
+    .info-section {
+        margin-bottom: 30px;
+    }
+
+    .info-section h5 {
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--dark-text);
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .info-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        padding: 10px;
+        background-color: var(--main-bg);
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+    }
+
+    .info-item i {
+        color: var(--medical-dark);
+        font-size: 1.2rem;
+        margin-right: 15px;
+        width: 24px;
+        text-align: center;
+    }
+
+    .info-label {
+        font-weight: 500;
+        color: var(--dark-text);
+        margin-right: 10px;
+    }
+
+    .info-value {
+        color: var(--light-text);
+    }
+
+    .action-button {
+        background: linear-gradient(135deg, var(--medical-blue) 0%, var(--medical-dark) 100%);
+        color: white;
+        border: none;
+        padding: 15px 20px;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(135, 206, 235, 0.3);
+    }
+
+    .action-button:hover {
+        background: linear-gradient(135deg, var(--medical-dark) 0%, #4682b4 100%);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(135, 206, 235, 0.4);
+    }
+
+    .form-control {
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .form-control:focus {
+        border-color: var(--medical-blue);
+        box-shadow: 0 0 0 0.2rem rgba(135, 206, 235, 0.25);
+    }
+
+    @media (max-width: 768px) {
         .main-content {
             padding: 20px;
         }
-
-        .page-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        .profile-card {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .profile-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .profile-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background-color: var(--light-bg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 48px;
-            color: var(--secondary-color);
-        }
-
-        .profile-name {
-            font-size: 24px;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-
-        .profile-role {
-            color: var(--secondary-color);
-            font-size: 16px;
-        }
-
-        .info-section {
-            margin-bottom: 30px;
-        }
-
-        .info-section h5 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--light-bg);
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            padding: 10px;
-            background-color: var(--light-bg);
-            border-radius: 5px;
-        }
-
-        .info-item i {
-            color: var(--secondary-color);
-            font-size: 1.2rem;
-            margin-right: 15px;
-            width: 24px;
-            text-align: center;
-        }
-
-        .info-label {
-            font-weight: 500;
-            color: var(--primary-color);
-            margin-right: 10px;
-        }
-
-        .info-value {
-            color: var(--dark-bg);
-        }
-
-        .action-button {
-            background-color: var(--secondary-color);
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .action-button:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-
-        .form-control {
-            border: 1px solid #dee2e6;
-            border-radius: 5px;
-            padding: 10px;
-        }
-
-        .form-control:focus {
-            border-color: var(--secondary-color);
-            box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
     <div class="container-fluid">
